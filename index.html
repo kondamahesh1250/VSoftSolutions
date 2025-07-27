@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>V SOFTS SOLUTIONS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      box-sizing: border-box;
+      text-decoration: none;
+      text-transform: none;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Navbar */
+    .tp-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+
+    .tp-navbar .navbar-brand {
+      font-weight: bold;
+      color: #d81b60 !important;
+    }
+
+    .tp-navbar .nav-link {
+      font-weight: 500;
+      color: #333;
+      margin-right: 15px;
+    }
+
+    .tp-navbar .nav-link:hover,
+    .tp-navbar .nav-link.active {
+      color: #d81b60;
+    }
+
+    .tp-dropdown-menu {
+      border-radius: 0;
+      border: 1px solid #ddd;
+    }
+
+    .tp-dropdown-menu .dropdown-item:hover {
+      background-color: #f2f2f2;
+      color: #d81b60;
+    }
+
+    .tp-btn-register {
+      background-color: #d81b60;
+      color: white;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+
+    .tp-btn-register:hover {
+      background-color: #c2185b;
+    }
+
+    @media (max-width: 992px) {
+      .tp-btn-register {
+        margin-top: 10px;
+      }
+    }
+
+    /* Carousel */
+    .tp-carousel-item {
+      height: 80vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .tp-carousel-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+      z-index: 1;
+    }
+
+    .tp-carousel-caption {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      opacity: 0;
+      z-index: 3;
+      padding: 2rem;
+      border-radius: 12px;
+      transition: all 1s ease;
+      width: 50vw;
+    }
+
+    .carousel-item.active .tp-carousel-caption {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .tp-carousel-caption h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .tp-carousel-caption p {
+      font-size: 1.1rem;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      padding: 20px;
+    }
+
+    .tp-btn-custom {
+      background-color: #17a2b8;
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .tp-btn-custom:hover {
+      background-color: #138496;
+      transform: scale(1.05);
+    }
+
+    /* About Us */
+
+    .about-us {
+      width: 100%;
+      background-color: #f8f9fa;
+    }
+
+    .about-us img {
+      transition: transform 0.3s ease-in-out;
+      margin-left: 50px !important;
+    }
+
+    .about-us img:hover {
+      transform: scale(1.05);
+    }
+
+    .about-us .list-unstyled li {
+      margin-bottom: 10px;
+    }
+
+    .about-us .btn-primary {
+      transition: all 0.3s ease;
+    }
+
+    .about-us .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    hr {
+      margin: 0 20px;
+      border: 2px solid black;
+    }
+
+    .textcontent {
+      text-align: justify;
+    }
+
+    /* Services */
+    .tp-services-section {
+      padding: 40px 0;
+    }
+
+    .tp-section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .tp-service-card {
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      border-radius: 15px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 30px;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .tp-service-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .tp-service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      z-index: 0;
+      text-align: center;
+    }
+
+    .tp-service-card h4,
+    .tp-service-card p,
+    .tp-service-card a {
+      position: relative;
+      z-index: 1;
+      margin-left: 15px;
+      margin-top: 10px;
+    }
+
+    .bi-arrow-right {
+      font-size: 0.8rem;
+    }
+
+    .tp-service-card a {
+      width: 100px;
+      background-color: #ffc107;
+      color: #000;
+      padding: 10px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.75rem;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .controlprev {
+      justify-content: start;
+      width: 30px;
+    }
+
+    .controlnext {
+      justify-content: end;
+      width: 30px;
+    }
+
+    .tp-service-card a:hover {
+      background-color: #ffca2c;
+    }
+
+    @media (max-width: 768px) {
+      .tp-service-card {
+        height: 300px;
+      }
+    }
+
+    /* Footer */
+    .tp-footer {
+      position: relative;
+      background-image: url('./images/footer.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .tp-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
+    .tp-footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tp-footer h5 {
+      color: #00aaff;
+      font-weight: bold;
+    }
+
+    .tp-footer a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .tp-footer a:hover {
+      color: #c2185b;
+    }
+
+    .tp-footer .tp-social-icons a {
+      color: #fff;
+      margin-right: 15px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .tp-footer .tp-social-icons a:hover {
+      color: #00aaff;
+    }
+
+    .tp-footer .tp-btn-about {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .tp-footer .tp-btn-about:hover {
+      background-color: #0077aa;
+      color: #00aaff;
+    }
+
+    .tp-footer .tp-copyright {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 1px solid #555;
+      padding-top: 20px;
+      color: #ccc;
+    }
+
+    /* Fixed Bottom Buttons */
+    .tp-bottom-buttons {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 9999;
+    }
+
+    .tp-bottom-buttons a {
+      flex: 1;
+      margin: 0 5px;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .tp-btn-call {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .tp-btn-whatsapp {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .tp-btn-call:hover,
+    .tp-btn-whatsapp:hover,
+    .tp-btn-register:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg tp-navbar px-4 shadow-sm">
+    <a class="navbar-brand" href="./index.html">
+      <img src="./images/logo.webp" alt="Logo" height="30" class="d-inline-block align-text-top">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#aboutsection">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+            data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu tp-dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="./cybersecurity.html">Cybersecurity</a></li>
+            <li><a class="dropdown-item" href="./itconsultation.html">IT Consultation</a></li>
+            <li><a class="dropdown-item" href="./digitalmarketing.html">Digital Marketing</a></li>
+            <li><a class="dropdown-item" href="./blockchain.html">Blockchain</a></li>
+            <li><a class="dropdown-item" href="./medicalcoding.html">Medical Coding</a></li>
+            <li><a class="dropdown-item" href="./powerbi.html">Power BI</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./careers.html">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./technologies.html">Technologies</a>
+        </li>
+      </ul>
+      <a href="./register.html" class="btn tp-btn-register ms-lg-3">Register Now</a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Carousel -->
+  <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active tp-carousel-item" style="background-image: url('./images/img1.jpg');">
+        <div class="tp-carousel-caption text-white text-center">
+          <h2 class="display-5">Where Innovation Meets Excellence</h2>
+          <p class="lead">Transformative ideas driving superior outcomes with next-gen solutions.</p>
+          <button class="btn tp-btn-custom px-4 py-2">Learn More</button>
+        </div>
+      </div>
+      <div class="carousel-item tp-carousel-item" style="background-image: url('./images/img2.jpg');">
+        <div class="tp-carousel-caption text-white text-center">
+          <h2 class="display-5">Cutting Edge Development Services</h2>
+          <p class="lead">Experience innovation and technical brilliance tailored to your business needs.</p>
+          <button class="btn tp-btn-custom px-4 py-2">About Us</button>
+        </div>
+      </div>
+      <div class="carousel-item tp-carousel-item" style="background-image: url('./images/img3.jpg');">
+        <div class="tp-carousel-caption text-white text-center">
+          <h2 class="display-5">Custom Web Application Solutions</h2>
+          <p class="lead">High-performance web apps with seamless UX and futuristic design.</p>
+          <button class="btn tp-btn-custom px-4 py-2">Contact Us</button>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!--AboutUs Section-->
+
+  <section class="about-us py-5 bg-light" id="aboutsection">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 p-2">
+          <h2 class="font-weight-bold mb-4 fw-bold">About <span style="color: blueviolet;">V SOFTS SOLUTIONS</span></h2>
+          <p class="text-muted mb-4 textcontent">
+            At <strong>V SOFTS SOLUTIONS</strong>, we believe technology isn’t just about tools — it’s about
+            transforming ideas into impact. We are a forward-thinking IT consulting firm dedicated to delivering
+            intelligent software solutions that help businesses evolve, grow, and lead in their industries.
+          </p>
+          <p class="text-muted mb-4 textcontent">
+            With a passion for innovation and a commitment to excellence, our team of experts partners with clients to
+            solve complex challenges using smart, scalable technologies. From software development to digital strategy,
+            we provide end-to-end solutions tailored to each client's unique vision and goals.
+          </p>
+          <p class="text-muted mb-4 textcontent">
+            Whether you are a startup aiming to launch your first product or an enterprise looking to optimize systems
+            and scale globally — we walk with you at every step, ensuring your digital journey is seamless, successful,
+            and sustainable.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="text-primary">Our Mission</h5>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle me-2 text-primary"></i>Innovative Solutions</li>
+                <li><i class="bi bi-check-circle me-2 text-primary"></i>Customer Satisfaction</li>
+                <li><i class="bi bi-check-circle me-2 text-primary"></i>Sustainable Practices</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5 class="text-primary">Our Vision</h5>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-bullseye me-2 text-primary"></i>Global Reach</li>
+                <li><i class="bi bi-bullseye me-2 text-primary"></i>Industry Leadership</li>
+                <li><i class="bi bi-bullseye me-2 text-primary"></i>Continuous Growth</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary mt-4 mb-3">Learn More</a>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxjb21wYW55fGVufDB8MHx8fDE3MjEyMTE5MDZ8MA&ixlib=rb-4.0.3&q=80&w=1080"
+            alt="About Us" width="500" class="img-fluid rounded shadow">
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="text-center">
+            <i class="bi bi-people fs-1 text-primary mb-2"></i>
+            <h2 class="fw-bold">500+</h2>
+            <p class="text-muted">Clients</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="text-center">
+            <i class="bi bi-briefcase fs-1 text-primary mb-2"></i>
+            <h2 class="fw-bold">1000+</h2>
+            <p class="text-muted">Projects</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="text-center">
+            <i class="bi bi-trophy fs-1 text-primary mb-2"></i>
+            <h2 class="fw-bold">50+</h2>
+            <p class="text-muted">Awards</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="text-center">
+            <i class="bi bi-globe fs-1 text-primary mb-2"></i>
+            <h2 class="fw-bold">20+</h2>
+            <p class="text-muted">Countries</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Services -->
+  <div class="tp-services-section">
+    <div class="container position-relative">
+      <h2 class="tp-section-title">Our Services</h2>
+      <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="tp-service-card" style="background-image: url('./images/img8.jpg');">
+                  <h4>Cyber Security</h4>
+                  <p>Protect your digital assets with top-tier cyber defense and proactive threat monitoring.</p>
+                  <a href="cybersecurity.html">Read More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tp-service-card"
+                  style="background-image: url('https://www.shutterstock.com/image-photo/business-team-collaboration-discussing-working-600nw-1823020430.jpg');">
+                  <h4>IT Consultation</h4>
+                  <p>Get expert guidance to modernize infrastructure and align IT with business strategy.</p>
+                  <a href="./itconsultation.html">Read More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tp-service-card"
+                  style="background-image: url('https://www.michaelpage.ae/sites/michaelpage.ae/files/legacy/7_digital_skills600x387.png');">
+                  <h4>Digital Marketing</h4>
+                  <p>Grow your online presence through SEO, SEM, social media & email marketing strategies.</p>
+                  <a href="./digitalmarketing.html">Read More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="tp-service-card"
+                  style="background-image: url('https://www.shutterstock.com/image-photo/blockchain-technology-concept-revolutionizing-industries-600nw-2481711293.jpg');">
+                  <h4>Blockchain</h4>
+                  <p>Implement decentralized solutions for secure transactions and transparent data exchange.</p>
+                  <a href="./blockchain.html">Read More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tp-service-card"
+                  style="background-image: url('./images/img6.jpg');">
+                  <h4>Medical Coding</h4>
+                  <p>Ensure accurate documentation and billing with our professional coding services.</p>
+                  <a href="./medicalcoding.html">Read More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tp-service-card" style="background-image: url('./images/img7.jpg');">
+                  <h4>Power BI</h4>
+                  <p>Turn your business data into actionable insights with interactive dashboards.</p>
+                  <a href="./powerbi.html">Read More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev controlprev" type="button" data-bs-target="#servicesCarousel"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next controlnext" type="button" data-bs-target="#servicesCarousel"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="tp-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>V SOFTS<br><small>Solutions pvt ltd</small></h5>
+          <p class="about-text">We provide the best in class tools, training, processes and support to manage the common
+            yet essential aspects of your business.</p><br>
+          <a href="about.html" class="tp-btn-about">About us</a>
+        </div>
+        <div class="col-md-3 mt-4">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="./cybersecurity.html">Cyber Security</a></li>
+            <li><a href="./itconsultation.html">IT Consultation</a></li>
+            <li><a href="./digitalmarketing.html">Digital Market</a></li>
+            <li><a href="./blockchain.html">Blockchain</a></li>
+            <li><a href="./medicalcoding.html">Medical Coding</a></li>
+            <li><a href="./powerbi.html">Power BI</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#">Information Technology</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Retail and Commerce</a></li>
+            <li><a href="#">Media and Entertainment</a></li>
+            <li><a href="#">Finance</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Get In Touch</h5>
+          <ul>
+            <li>Survey No.64 Unit No.12, Plot No 35&36, HI-TECH City Layout, Jubilee Enclave, Madhapur, Telangana 500081
+            </li>
+            <li>info@vsoftssolutions.com</li>
+            <li>9441927859</li>
+          </ul>
+          <div class="tp-social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-google"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="tp-copyright mt-4">
+        2025 © All rights reserved by <strong>V SOFTS SOLUTIONS</strong>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Fixed Buttons -->
+  <div class="tp-bottom-buttons">
+    <a href="#" class="btn tp-btn-call"><i class="bi bi-telephone"></i> CALL NOW</a>
+    <a href="register.html" class="btn tp-btn-register"><i class="bi bi-r-circle"></i> REGISTER NOW</a>
+    <a href="#" class="btn tp-btn-whatsapp"><i class="bi bi-whatsapp"></i> WHATSAPP</a>
+  </div>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

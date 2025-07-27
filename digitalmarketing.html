@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar */
+    .tp-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+
+    .tp-navbar .navbar-brand {
+      font-weight: bold;
+      color: #d81b60 !important;
+    }
+
+    .tp-navbar .nav-link {
+      font-weight: 500;
+      color: #333;
+      margin-right: 15px;
+    }
+
+    .tp-navbar .nav-link:hover,
+    .tp-navbar .nav-link.active {
+      color: #d81b60;
+    }
+
+    .tp-dropdown-menu {
+      border-radius: 0;
+      border: 1px solid #ddd;
+    }
+
+    .tp-dropdown-menu .dropdown-item:hover {
+      background-color: #f2f2f2;
+      color: #d81b60;
+    }
+
+    .tp-btn-register {
+      background-color: #d81b60;
+      color: white;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+
+    .tp-btn-register:hover {
+      background-color: #c2185b;
+    }
+
+    @media (max-width: 992px) {
+      .tp-btn-register {
+        margin-top: 10px;
+      }
+    }
+
+    .header-section {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .header-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px 20px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px #000;
+      animation: fadeDown 1s ease-in-out;
+      color: #ff9800;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(to right, #ff6f00, #ffa726);
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px #000;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 40px 20px;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    section p,
+    section li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    section img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .btn-back {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .btn-back a {
+      padding: 10px 20px;
+      font-weight: 600;
+      background: #ffc107;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back a:hover {
+      background: #ffdb4d;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Footer */
+    .tp-footer {
+      position: relative;
+      background-image: url('./images/footer.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .tp-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
+    .tp-footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tp-footer h5 {
+      color: #00aaff;
+      font-weight: bold;
+    }
+
+    .tp-footer a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .tp-footer a:hover {
+      color: #c2185b;
+    }
+
+    .tp-footer .tp-social-icons a {
+      color: #fff;
+      margin-right: 15px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .tp-footer .tp-social-icons a:hover {
+      color: #00aaff;
+    }
+
+    .tp-footer .tp-btn-about {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .tp-footer .tp-btn-about:hover {
+      background-color: #0077aa;
+      color: #00aaff;
+    }
+
+    .tp-footer .tp-copyright {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 1px solid #555;
+      padding-top: 20px;
+      color: #ccc;
+    }
+
+    /* Fixed Bottom Buttons */
+    .tp-bottom-buttons {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 9999;
+    }
+
+    .tp-bottom-buttons a {
+      flex: 1;
+      margin: 0 5px;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .tp-btn-call {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .tp-btn-whatsapp {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .tp-btn-call:hover,
+    .tp-btn-whatsapp:hover,
+    .tp-btn-register:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg tp-navbar px-4 shadow-sm">
+    <a class="navbar-brand" href="./index.html">
+      <img src="./images/logo.webp" alt="Logo" height="30" class="d-inline-block align-text-top">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+            data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu tp-dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="./cybersecurity.html">Cybersecurity</a></li>
+            <li><a class="dropdown-item" href="./itconsultation.html">IT Consultation</a></li>
+            <li><a class="dropdown-item" href="./digitalmarketing.html">Digital Marketing</a></li>
+            <li><a class="dropdown-item" href="./blockchain.html">Blockchain</a></li>
+            <li><a class="dropdown-item" href="./medicalcoding.html">Medical Coding</a></li>
+            <li><a class="dropdown-item" href="./powerbi.html">Power BI</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./careers.html">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./technologies.html">Technologies</a>
+        </li>
+      </ul>
+      <a href="./register.html" class="btn tp-btn-register ms-lg-3">Register Now</a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Header -->
+  <div class="header-section">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <h1>Digital Marketing Services</h1>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <div class="container py-5">
+
+    <!-- Overview -->
+    <section>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img
+            src="./images/img17.jpg"
+            alt="Digital Marketing Overview">
+        </div>
+        <div class="col-md-6">
+          <h2>Overview</h2>
+          <p>
+            Digital Marketing involves promoting products or services using digital channels such as search engines,
+            websites, social media, email, and mobile apps.
+            It enables businesses to reach and engage with a global audience effectively.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Search Engine Optimization (SEO)</li>
+        <li>Pay-Per-Click (PPC) Advertising</li>
+        <li>Social Media Marketing and Management</li>
+        <li>Email and Mobile Marketing Campaigns</li>
+        <li>Content Creation and Brand Storytelling</li>
+      </ul>
+    </section>
+
+    <!-- Scope -->
+    <section>
+      <h2>Scope</h2>
+      <p>
+        Digital Marketing is essential across industries looking to grow their customer base, build brand awareness, and
+        increase revenue.
+        It offers real-time performance insights and audience targeting options.
+      </p>
+    </section>
+
+    <!-- Advantages -->
+    <section>
+      <h2>Advantages</h2>
+      <ul>
+        <li>Highly targeted and measurable campaigns</li>
+        <li>Cost-effective compared to traditional methods</li>
+        <li>Boosts customer engagement and loyalty</li>
+        <li>Enables personalized content and offers</li>
+        <li>Enhances brand credibility and presence</li>
+      </ul>
+    </section>
+  </div>
+  <!-- Footer -->
+  <footer class="tp-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>V SOFTS<br><small>Solutions pvt ltd</small></h5>
+          <p class="about-text">We provide the best in class tools, training, processes and support to manage the common
+            yet essential aspects of your business.</p><br>
+          <a href="about.html" class="tp-btn-about">About us</a>
+        </div>
+        <div class="col-md-3 mt-4">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="./cybersecurity.html">Cyber Security</a></li>
+            <li><a href="./itconsultation.html">IT Consultation</a></li>
+            <li><a href="./digitalmarketing.html">Digital Market</a></li>
+            <li><a href="./blockchain.html">Blockchain</a></li>
+            <li><a href="./medicalcoding.html">Medical Coding</a></li>
+            <li><a href="./powerbi.html">Power BI</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#">Information Technology</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Retail and Commerce</a></li>
+            <li><a href="#">Media and Entertainment</a></li>
+            <li><a href="#">Finance</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Get In Touch</h5>
+          <ul>
+            <li>Survey No.64 Unit No.12, Plot No 35&36, HI-TECH City Layout, Jubilee Enclave, Madhapur, Telangana 500081
+            </li>
+            <li>info@vsoftssolutions.com</li>
+            <li>9441927859</li>
+          </ul>
+          <div class="tp-social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-google"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="tp-copyright mt-4">
+        2025 © All rights reserved by <strong>V SOFTS SOLUTIONS</strong>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Fixed Buttons -->
+  <div class="tp-bottom-buttons">
+    <a href="#" class="btn tp-btn-call"><i class="bi bi-telephone"></i> CALL NOW</a>
+    <a href="register.html" class="btn tp-btn-register"><i class="bi bi-r-circle"></i> REGISTER NOW</a>
+    <a href="#" class="btn tp-btn-whatsapp"><i class="bi bi-whatsapp"></i> WHATSAPP</a>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers at VSofts Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar */
+    .tp-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .tp-navbar .navbar-brand {
+      font-weight: bold;
+      color: #d81b60 !important;
+    }
+
+    .tp-navbar .nav-link {
+      font-weight: 500;
+      color: #333;
+      margin-right: 15px;
+    }
+
+    .tp-navbar .nav-link:hover,
+    .tp-navbar .nav-link.active {
+      color: #d81b60;
+    }
+
+    .tp-dropdown-menu {
+      border-radius: 0;
+      border: 1px solid #ddd;
+    }
+
+    .tp-dropdown-menu .dropdown-item:hover {
+      background-color: #f2f2f2;
+      color: #d81b60;
+    }
+
+    .tp-btn-register {
+      background-color: #d81b60;
+      color: white;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+
+    .tp-btn-register:hover {
+      background-color: #c2185b;
+    }
+
+    @media (max-width: 992px) {
+      .tp-btn-register {
+        margin-top: 10px;
+      }
+    }
+
+    .hero {
+      background: linear-gradient(to right, #17a2b8, #138496);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .job-card {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: none;
+      transition: transform 0.3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* footer {
+      background-color: #f8f9fa;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    } */
+
+    .section-title {
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .intro-text p {
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    @media (max-width: 767px) {
+      .intro-text {
+        margin-top: 20px;
+      }
+    }
+
+    /* Footer */
+    .tp-footer {
+      position: relative;
+      background-image: url('./images/footer.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .tp-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
+    .tp-footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tp-footer h5 {
+      color: #00aaff;
+      font-weight: bold;
+    }
+
+    .tp-footer a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    .tp-footer a:hover {
+      color: #c2185b;
+    }
+
+    .tp-footer .tp-social-icons a {
+      color: #fff;
+      margin-right: 15px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .tp-footer .tp-social-icons a:hover {
+      color: #00aaff;
+    }
+
+    .tp-footer .tp-btn-about {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .tp-footer .tp-btn-about:hover {
+      background-color: #0077aa;
+      color: #00aaff;
+    }
+
+    .tp-footer .tp-copyright {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 1px solid #555;
+      padding-top: 20px;
+      color: #ccc;
+    }
+
+    /* Fixed Bottom Buttons */
+    .tp-bottom-buttons {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 9999;
+    }
+
+    .tp-bottom-buttons a {
+      flex: 1;
+      margin: 0 5px;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .tp-btn-call {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .tp-btn-whatsapp {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .tp-btn-call:hover,
+    .tp-btn-whatsapp:hover,
+    .tp-btn-register:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg tp-navbar px-4 shadow-sm">
+    <a class="navbar-brand" href="./index.html">
+      <img src="./images/logo.webp" alt="Logo" height="30" class="d-inline-block align-text-top">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+            data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu tp-dropdown-menu" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="./cybersecurity.html">Cybersecurity</a></li>
+            <li><a class="dropdown-item" href="./itconsultation.html">IT Consultation</a></li>
+            <li><a class="dropdown-item" href="./digitalmarketing.html">Digital Marketing</a></li>
+            <li><a class="dropdown-item" href="./blockchain.html">Blockchain</a></li>
+            <li><a class="dropdown-item" href="./medicalcoding.html">Medical Coding</a></li>
+            <li><a class="dropdown-item" href="./powerbi.html">Power BI</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./careers.html">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./technologies.html">Technologies</a>
+        </li>
+      </ul>
+      <a href="./register.html" class="btn tp-btn-register ms-lg-3">Register Now</a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4">Careers at VSofts Solutions</h1>
+      <p class="lead mt-3 mb-4">Build your future with us – join our mission to redefine digital engagement.</p>
+      <a href="#open-positions" class="btn btn-light btn-lg">Explore Openings</a>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="./images/careers.jpg" alt="Careers at VSofts" class="img-fluid rounded" />
+        </div>
+        <div class="col-md-6 intro-text">
+          <h4 class="mb-3">Careers @ V SOFTS SOLUTIONS</h4>
+          <p>
+            At V SOFTS SOLUTIONS, we're always on the lookout for passionate, driven, and forward-thinking professionals
+            who are eager to build cutting-edge solutions and make a real impact.
+          </p>
+          <p>
+            We believe that continuous learning is not just a mindset—it's a competitive advantage. In a fast-paced and
+            ever-evolving tech landscape, our team thrives by embracing new technologies and mastering emerging domains
+            at lightning speed.
+          </p>
+          <p>
+            As a full-spectrum IT solutions company, we take pride in our people—individuals who bring deep technical
+            expertise, creative problem-solving, and business insight to every project. This diverse blend of talent
+            fuels our innovation and sets us apart in delivering transformative outcomes for our clients.
+          </p>
+          <p>
+            If you're someone who loves to innovate, grow beyond boundaries, and collaborate with experts who challenge
+            the status quo, then V SOFTS SOLUTIONS is the place for you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Positions -->
+  <section class="py-5" id="open-positions">
+    <div class="container">
+      <h2 class="section-title">Current Openings</h2>
+
+      <!-- Web Technologist -->
+      <div class="card mb-5 job-card p-4">
+        <h4>1. Web Technologist</h4>
+        <p><strong>Required Skills:</strong></p>
+        <ul>
+          <li>Strong foundation in computer science and web technologies (PHP/Python)</li>
+          <li>Expert with JavaScript frameworks (e.g., jQuery, Backbone.js, Node.js)</li>
+          <li>Expertise in HTML5, CSS3</li>
+          <li>Optional: Online advertising, MVC architecture, Messaging, Facebook/Google APIs</li>
+        </ul>
+        <p><strong>Education:</strong> UG - B.Tech/B.E. in Computers; PG - M.Tech in Computers</p>
+      </div>
+
+      <!-- Senior Automation Tester -->
+      <div class="card mb-5 job-card p-4">
+        <h4>2. Senior Automation Tester</h4>
+        <p><strong>Location:</strong> Hyderabad (Remote)</p>
+        <p><strong>Type:</strong> Full-time</p>
+
+        <p><strong>About VSofts Solutions:</strong><br>
+          Join us at VSofts Solutions and be part of reshaping business communication with Vsofts, our AI-powered
+          text-based engagement platform. Boost confidence, trust, and customer relationships with Meera's human-like
+          interactions at scale. As a Senior Automation Tester, you'll drive the development of automated testing
+          solutions, enhancing product quality and ensuring efficient software delivery.
+        </p>
+
+        <p><strong>Responsibilities:</strong></p>
+        <ul>
+          <li>Lead design and implementation of automated testing frameworks</li>
+          <li>Collaborate with cross-functional teams to define test plans</li>
+          <li>Develop & maintain test scripts for functional, regression, and performance testing</li>
+          <li>Execute automated tests, analyze results, and ensure quality</li>
+          <li>Mentor junior engineers and promote best automation practices</li>
+          <li>Integrate tests with CI/CD pipelines for smooth delivery</li>
+          <li>Stay updated on industry tools, frameworks, and trends</li>
+          <li>Contribute to root cause analysis and resolution of defects</li>
+        </ul>
+
+        <p><strong>Requirements:</strong></p>
+        <ul>
+          <li>Bachelor’s in CS/IT; Master’s is a plus</li>
+          <li>Experience in automation roles with frameworks like Selenium, Appium, or Cypress</li>
+          <li>Strong coding in Java, Python, or C#</li>
+          <li>Knowledge of web tech, APIs, databases</li>
+          <li>Experience with version control, CI/CD tools</li>
+          <li>Agile/Scrum experience</li>
+          <li>Problem-solving, multi-tasking, communication skills</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="tp-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>V SOFTS<br><small>Solutions pvt ltd</small></h5>
+          <p class="about-text">We provide the best in class tools, training, processes and support to manage the common
+            yet essential aspects of your business.</p><br>
+          <a href="about.html" class="tp-btn-about">About us</a>
+        </div>
+        <div class="col-md-3 mt-4">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="./cybersecurity.html">Cyber Security</a></li>
+            <li><a href="./itconsultation.html">IT Consultation</a></li>
+            <li><a href="./digitalmarketing.html">Digital Market</a></li>
+            <li><a href="./blockchain.html">Blockchain</a></li>
+            <li><a href="./medicalcoding.html">Medical Coding</a></li>
+            <li><a href="./powerbi.html">Power BI</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#">Information Technology</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Retail and Commerce</a></li>
+            <li><a href="#">Media and Entertainment</a></li>
+            <li><a href="#">Finance</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Get In Touch</h5>
+          <ul>
+            <li>Survey No.64 Unit No.12, Plot No 35&36, HI-TECH City Layout, Jubilee Enclave, Madhapur, Telangana 500081
+            </li>
+            <li>info@vsoftssolutions.com</li>
+            <li>9441927859</li>
+          </ul>
+          <div class="tp-social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-google"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="tp-copyright mt-4">
+        2025 © All rights reserved by <strong>V SOFTS SOLUTIONS</strong>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Fixed Buttons -->
+  <div class="tp-bottom-buttons">
+    <a href="#" class="btn tp-btn-call"><i class="bi bi-telephone"></i> CALL NOW</a>
+    <a href="register.html" class="btn tp-btn-register"><i class="bi bi-r-circle"></i> REGISTER NOW</a>
+    <a href="#" class="btn tp-btn-whatsapp"><i class="bi bi-whatsapp"></i> WHATSAPP</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
