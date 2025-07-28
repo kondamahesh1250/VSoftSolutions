@@ -271,7 +271,7 @@
     .tp-footer .tp-copyright {
       text-align: center;
       margin-top: 40px;
-      margin-bottom: 20px;
+      padding-bottom: 30px;
       border-top: 1px solid #555;
       padding-top: 20px;
       color: #ccc;
@@ -312,6 +312,19 @@
     .tp-btn-whatsapp:hover,
     .tp-btn-register:hover {
       opacity: 0.9;
+    }
+
+    @media (max-width: 992px) {
+      .tp-bottom-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px 10px;
+      }
+
+      .tp-footer .tp-copyright {
+        padding-bottom: 130px;
+      }
     }
   </style>
 </head>
@@ -375,9 +388,7 @@
     <section>
       <div class="row align-items-center">
         <div class="col-md-6">
-          <img
-            src="./images/img17.jpg"
-            alt="Digital Marketing Overview">
+          <img src="./images/img17.jpg" alt="Digital Marketing Overview">
         </div>
         <div class="col-md-6">
           <h2>Overview</h2>
